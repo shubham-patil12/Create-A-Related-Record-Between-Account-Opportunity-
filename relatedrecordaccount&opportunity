@@ -1,0 +1,14 @@
+   Account acc = new Account();
+         acc.Name='Related opp';
+             acc.Rating='Hot';
+                 acc.Phone='9887568899';
+                    insert acc;
+                       if(acc.id!=null){
+                 system.debug('Account Record Is Created '+acc.id);
+            Opportunity opp=new Opportunity();
+         opp.Name='Related Record';
+      opp.CloseDate=system.today().adddays(10);
+    opp.StageName='Prospecting';
+ opp.AccountId=acc.id;
+ insert opp;
+}
